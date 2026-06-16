@@ -1,0 +1,64 @@
+.feature-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 26px;
+  background: linear-gradient(180deg, rgba(16, 37, 65, 0.7), rgba(14, 29, 51, 0.55));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
+  overflow: hidden;
+}
+
+.feature-card::after {
+  /* soft top sheen */
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(59, 130, 246, 0.55);
+  box-shadow: var(--shadow-glow), var(--shadow-md);
+}
+
+.feature-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius);
+  background: var(--gradient-accent);
+  color: #fff;
+  box-shadow: 0 6px 18px var(--accent-glow);
+}
+
+.feature-card__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.feature-card__desc {
+  font-size: 0.95rem;
+  color: var(--body);
+  line-height: 1.6;
+}
+
+.feature-card__code {
+  margin-top: auto;
+  padding: 14px 16px;
+  background: #061021;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+
+/* Bento span rules live in Features.css (grid context). */

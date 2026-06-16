@@ -1,0 +1,283 @@
+.locator__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.locator__title {
+  font-size: clamp(1.8rem, 3.6vw, 2.7rem);
+  margin: 18px 0 18px;
+}
+.locator__body {
+  font-size: 1.075rem;
+  color: var(--body);
+  line-height: 1.7;
+  max-width: 460px;
+}
+
+.locator__bullets {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.locator__bullets li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--heading);
+  font-weight: 500;
+  font-size: 0.98rem;
+}
+.locator__check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: var(--gradient-accent);
+  color: #fff;
+}
+
+/* ── Mock "Playwright Selectors" panel ────────────────────────── */
+.locator__panel {
+  max-width: 420px;
+  width: 100%;
+  margin-inline: auto;
+  border-radius: var(--radius-lg);
+  background: #0a1c33;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(59, 130, 246, 0.16);
+  overflow: hidden;
+}
+
+.locator__panel-head {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 16px;
+  background: #0a1832;
+  border-bottom: 1px solid var(--line);
+}
+.locator__panel-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: var(--gradient-accent);
+  color: #fff;
+}
+.locator__panel-title {
+  color: var(--heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.locator__panel-pro {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  background: rgba(59, 130, 246, 0.14);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+
+.locator__panel-body {
+  padding: 16px;
+}
+
+.locator__heading-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 14px;
+}
+.locator__heading-icon {
+  color: var(--accent);
+  display: inline-flex;
+}
+.locator__heading {
+  color: var(--heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Pick element CTA */
+.locator__pick {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--gradient-accent);
+  box-shadow: var(--shadow-glow);
+  transition: transform 0.2s var(--ease);
+}
+.locator__pick:hover {
+  transform: translateY(-2px);
+}
+
+.locator__field-label {
+  display: block;
+  margin: 16px 0 8px;
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Verify a locator */
+.locator__verify {
+  display: flex;
+  align-items: stretch;
+  gap: 7px;
+}
+.locator__verify-input {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding: 9px 11px;
+  background: #061021;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.locator__verify-input .code-block {
+  font-size: 0.76rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.locator__verify-caret {
+  display: inline-block;
+  width: 1.5px;
+  height: 1em;
+  flex-shrink: 0;
+  background: var(--accent);
+  animation: caretBlink 1.1s steps(1) infinite;
+}
+.locator__verify-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  flex-shrink: 0;
+  background: #061021;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+}
+.locator__verify-test {
+  flex-shrink: 0;
+  padding: 0 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--gradient-accent);
+  border-radius: 8px;
+}
+
+.locator__result {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 9px;
+  padding: 9px 11px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--success);
+  background: rgba(63, 185, 80, 0.08);
+  border: 1px solid rgba(63, 185, 80, 0.25);
+  border-radius: 8px;
+}
+
+/* Extract from page divider */
+.locator__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 4px;
+  color: var(--muted);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.locator__divider::before,
+.locator__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* Strategy pills */
+.locator__strategies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.locator__strat {
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  color: var(--body);
+  background: rgba(255, 255, 255, 0.02);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.locator__strat--on {
+  color: #fff;
+  background: var(--gradient-accent);
+  border-color: transparent;
+  box-shadow: 0 4px 14px var(--accent-glow);
+}
+
+/* Extract button */
+.locator__extract {
+  width: 100%;
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.locator__extract:hover {
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+.locator__extract-count {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+@media (max-width: 920px) {
+  .locator__grid {
+    grid-template-columns: 1fr;
+  }
+  .locator__body {
+    max-width: none;
+  }
+}

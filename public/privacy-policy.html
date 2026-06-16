@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#081425" />
+  <title>Privacy Policy — Testwright Pro</title>
+  <meta name="description" content="Testwright Pro privacy policy — 100% client-side, no servers, no tracking. Your API key and data stay in your browser." />
+
+  <!-- SVG favicon: blue checkmark square (matches the main site) -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='2' width='28' height='28' rx='7' fill='%233b82f6'/%3E%3Cpath d='M10 16.5l4 4 8-9' fill='none' stroke='%23f8fafc' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ── Design tokens (mirrors the main site) ── */
+    :root {
+      --bg: #081425;
+      --bg-elev: #0e1d33;
+      --surface: #102541;
+      --line: #1c3553;
+      --accent: #3b82f6;
+      --accent-deep: #2f73e6;
+      --accent-glow: rgba(59, 130, 246, 0.3);
+      --heading: #f8fafc;
+      --body: #8da3bf;
+      --muted: #5f74a0;
+      --radius: 10px;
+      --radius-lg: 16px;
+      --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+      --container: 800px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-sans);
+      line-height: 1.7;
+      color: var(--body);
+      background-color: var(--bg);
+      background-image: radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 28px 28px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ::selection { background: var(--accent); color: #fff; }
+
+    .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: 24px; }
+
+    /* ── Top bar ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 20, 37, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand { display: flex; align-items: center; gap: 9px; }
+    .brand__logo {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+    .brand__name { font-weight: 700; font-size: 1.1rem; color: var(--heading); letter-spacing: -0.02em; }
+    .brand__pro {
+      font-size: 0.6rem; font-weight: 700; letter-spacing: 0.08em; color: var(--accent);
+      background: rgba(59, 130, 246, 0.14); border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 2px 7px; border-radius: 999px;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 0.9rem; font-weight: 600; color: var(--body);
+    }
+    .back-link:hover { color: var(--heading); text-decoration: none; }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      padding: clamp(48px, 8vw, 88px) 0 clamp(28px, 4vw, 40px);
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(36rem 22rem at 80% -10%, var(--accent-glow), transparent 70%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.25);
+      padding: 6px 12px; border-radius: 999px; margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800; line-height: 1.1; letter-spacing: -0.02em;
+      color: var(--heading);
+    }
+    .updated { color: var(--muted); font-size: 0.92rem; margin-top: 14px; }
+    .lead { margin-top: 22px; font-size: 1.05rem; line-height: 1.7; max-width: 64ch; }
+
+    /* ── Content ── */
+    main { padding-bottom: clamp(56px, 8vw, 96px); }
+
+    h2 {
+      font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em;
+      color: var(--heading);
+      margin-top: 44px; margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      display: flex; align-items: baseline; gap: 12px;
+    }
+    h2 .num {
+      font-family: var(--font-mono); font-size: 0.95rem; font-weight: 500;
+      color: var(--accent);
+    }
+    p { margin: 12px 0; }
+    strong { color: var(--heading); font-weight: 600; }
+    em { color: var(--body); }
+
+    code {
+      font-family: var(--font-mono); font-size: 0.85em;
+      color: #c3e88d;
+      background: #061021; border: 1px solid var(--line);
+      padding: 1px 6px; border-radius: 5px;
+    }
+
+    ul { padding-left: 4px; list-style: none; margin: 14px 0; }
+    li { position: relative; padding-left: 26px; margin: 10px 0; }
+    li::before {
+      content: '';
+      position: absolute; left: 0; top: 0.62em;
+      width: 7px; height: 7px; border-radius: 2px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+    }
+
+    /* Highlight callout (glass card) */
+    .highlight {
+      margin: 26px 0;
+      padding: 20px 22px;
+      background: linear-gradient(180deg, rgba(59, 130, 246, 0.1), rgba(16, 37, 65, 0.5));
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      border-left-width: 4px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    }
+    .highlight strong { color: var(--accent); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--line);
+      background: var(--bg-elev);
+      padding: 32px 0;
+    }
+    .footer__text { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+    .footer__links { margin-top: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer__links a { font-size: 0.88rem; font-weight: 600; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .topbar { backdrop-filter: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="topbar__inner container">
+      <a class="brand" href="/index.html" aria-label="Testwright home">
+        <span class="brand__logo" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f8fafc" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="4" />
+            <path d="M8 12.5l2.5 2.5L16 9" />
+          </svg>
+        </span>
+        <span class="brand__name">Testwright</span>
+        <span class="brand__pro">PRO</span>
+      </a>
+      <a class="back-link" href="/index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5" /><path d="M11 6l-6 6 6 6" />
+        </svg>
+        Back to site
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="4" /><path d="M8 12.5l2.5 2.5L16 9" />
+        </svg>
+        Privacy Policy
+      </span>
+      <h1>Your data stays yours.</h1>
+      <p class="updated">Last updated: 17 June 2026</p>
+      <p class="lead">
+        Testwright Pro (the “Extension”) is a browser extension that helps QA engineers and developers
+        generate test cases, extract Playwright selectors, and audit web forms. This policy explains
+        exactly what data the Extension handles and where it goes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="container">
+    <div class="highlight">
+      <strong>In short:</strong> Testwright Pro does not have any servers. The developer does not
+      collect, receive, store, see, sell, or share your data. There is no tracking, no analytics,
+      no advertising, and no user account. Everything happens locally in your browser, except
+      requests you explicitly send to the AI provider you choose.
+    </div>
+
+    <h2><span class="num">01</span> Data the Extension handles</h2>
+    <p>The Extension works with the following data, entirely on your device:</p>
+    <ul>
+      <li>
+        <strong>Your AI provider API key.</strong> If you enter an API key for a cloud provider
+        (such as Google, OpenAI, Anthropic, Groq, NVIDIA, DeepSeek, Qwen, or Kimi) or configure a
+        local model server (such as Ollama or LM Studio), the key and server settings are stored
+        locally in your browser using <code>chrome.storage.local</code>.
+      </li>
+      <li>
+        <strong>Requirement text and page content you submit.</strong> When you generate test cases,
+        pick elements, extract locators, auto-fill forms, or run the form tester, the relevant text
+        or page content is processed locally and—only for AI generation—sent to the AI endpoint you
+        have configured.
+      </li>
+      <li>
+        <strong>Your preferences.</strong> Settings such as theme, output language, selected provider,
+        and a local activity log are stored locally in your browser.
+      </li>
+    </ul>
+
+    <h2><span class="num">02</span> Where your data goes</h2>
+    <ul>
+      <li>
+        <strong>To the developer: never.</strong> The Extension has no backend. No data is ever
+        transmitted to the developer or to any third party operated by the developer.
+      </li>
+      <li>
+        <strong>To your chosen AI provider: only when you act.</strong> When you click a button that
+        generates content, your requirement text or page content is sent directly from your browser
+        to the AI endpoint you selected in Settings. If you use a local model (e.g. Ollama on
+        <code>localhost</code>), the data never leaves your machine. If you use a cloud provider, the
+        data is sent to that provider and is subject to <em>their</em> privacy policy and terms.
+      </li>
+    </ul>
+    <p>
+      You are responsible for choosing your AI provider and for reviewing that provider’s privacy
+      practices. Testwright Pro simply forwards your request to the endpoint you configured.
+    </p>
+
+    <h2><span class="num">03</span> On-page access</h2>
+    <p>
+      Features such as Pick Element, Extract Locators, Auto-Fill, Scan, and the Form Tester read or
+      interact with the page in your active tab. This happens <strong>only when you explicitly click
+      a button</strong> for that action. The Extension does not run in the background, does not monitor
+      your browsing, and does not read pages you are not actively testing. The “all sites” host
+      permission exists because you—not the developer—choose which website to test; the Extension has
+      no predetermined target site.
+    </p>
+
+    <h2><span class="num">04</span> Data storage and retention</h2>
+    <p>
+      All settings and keys are stored locally via <code>chrome.storage.local</code> and remain on your
+      device until you change them or remove the Extension. Uninstalling the Extension removes this
+      locally stored data. The developer cannot access this data at any time.
+    </p>
+
+    <h2><span class="num">05</span> Data the Extension does NOT do</h2>
+    <ul>
+      <li>No analytics or usage tracking.</li>
+      <li>No advertising or ad networks.</li>
+      <li>No selling or sharing of data with third parties.</li>
+      <li>No use of data for credit, lending, or any purpose unrelated to the Extension’s function.</li>
+      <li>No user accounts, sign-in, or personal-profile collection.</li>
+    </ul>
+
+    <h2><span class="num">06</span> Children’s privacy</h2>
+    <p>
+      The Extension is a professional developer tool and is not directed to children. It does not
+      knowingly handle data from children under 13.
+    </p>
+
+    <h2><span class="num">07</span> Changes to this policy</h2>
+    <p>
+      If this policy changes, the “Last updated” date above will be revised. Material changes will be
+      reflected in the Chrome Web Store listing.
+    </p>
+
+    <h2><span class="num">08</span> Contact</h2>
+    <p>
+      Questions about this policy can be sent to:
+      <a href="mailto:vaseeprasanna@gmail.com">vaseeprasanna@gmail.com</a>.
+    </p>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="footer__text">
+        © 2026 Testwright Pro. This Extension is provided free of charge. You bring your own AI key;
+        you stay in control of your data.
+      </p>
+      <div class="footer__links">
+        <a href="/index.html">← Back to Testwright</a>
+        <a href="mailto:vaseeprasanna@gmail.com">Contact</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

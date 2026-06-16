@@ -1,0 +1,81 @@
+.how__steps {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  /* <ol> ships with default list markers + left padding; strip them so
+     the numbered circles align with their step content. */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Connecting line behind the steps */
+.how__line {
+  position: absolute;
+  top: 26px;
+  left: 16%;
+  right: 16%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--line) 12%, var(--line) 88%, transparent);
+}
+
+.how__step {
+  position: relative;
+  text-align: center;
+  padding: 0 12px;
+}
+
+.how__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 0 0 6px var(--bg-elev), 0 6px 20px var(--accent-glow);
+  position: relative;
+  z-index: 1;
+}
+
+.how__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 14px;
+  border-radius: var(--radius);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  color: var(--accent);
+}
+
+.how__title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.how__desc {
+  font-size: 0.95rem;
+  color: var(--body);
+  line-height: 1.6;
+  max-width: 280px;
+  margin-inline: auto;
+}
+
+@media (max-width: 760px) {
+  .how__steps {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .how__line {
+    display: none;
+  }
+}
