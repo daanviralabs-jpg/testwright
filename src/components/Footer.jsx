@@ -3,9 +3,19 @@ import { resolveAction } from '../lib/actions.js';
 import { product, footer } from '../config/product.js';
 import './Footer.css';
 
+/**
+ * Prefix root-relative static paths (e.g. "/privacy-policy.html") with
+ * Vite's BASE_URL so they resolve under the GitHub Pages subpath.
+ * Leaves anchors, mailto:, and absolute URLs untouched.
+ */
+function withBase(href) {
+  if (!href.startsWith('/') || href.startsWith('//')) return href;
+  return import.meta.env.BASE_URL.replace(/\/$/, '') + href;
+}
+
 /** Resolve a footer link object → renderable href props, or null to drop it. */
 function resolveFooterLink(link) {
-  if (link.href) return { href: link.href };
+  if (link.href) return { href: withBase(link.href) };
   if (link.action) {
     const r = resolveAction(link.action);
     return r ? { href: r.href, external: r.external } : null;
