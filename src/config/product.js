@@ -542,7 +542,7 @@ export const footer = {
       title: 'Resources',
       links: [
         { label: 'Support the project', action: 'donate' },
-        { label: 'Contact', href: 'mailto:vaseeprasanna@gmail.com' },
+        { label: 'Contact', href: 'mailto:daanviralabs@gmail.com' },
       ],
     },
     {
